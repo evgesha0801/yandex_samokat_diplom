@@ -8,8 +8,8 @@ def test_new_order():
     assert response.status_code == 201
 
 def test_save_track():
-    TRACK = sender_stand_request.post_new_order(data.order_body).json()["track"]
-    return TRACK
+    TRACK_ORDER = sender_stand_request.post_new_order(data.order_body).json()["track"]
+    return TRACK_ORDER
 def test_take_order():
-    response = sender_stand_request.get_order(sender_stand_request.TRACK)
+    response = sender_stand_request.get_order(sender_stand_request.TRACK_ORDER)
     assert response.status_code == 200,'Недостаточно данных для поиска или заказ не найден'
